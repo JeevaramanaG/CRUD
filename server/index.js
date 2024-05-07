@@ -29,7 +29,6 @@ app.get("/", (req, res) => {
 
 app.get("/:id", (req, res) => {
   let id = req.params.id;
-  if (!mongoose.Types.ObjectId.isValid(id)) return res.send("Invalid User ID!");
   userModel
     .findById(id)
     .then((data) => {
